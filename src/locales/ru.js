@@ -1,6 +1,6 @@
 export default {
   translation: {
-    title: 'Hexlet chat',
+    title: 'Лаборатория стиля',
     channels: 'Каналы',
     logOutButton: 'Выход',
     input: 'Введите сообщение...',

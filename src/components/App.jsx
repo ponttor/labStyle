@@ -78,12 +78,7 @@ const App = ({ socket }) => {
         <Nav />
         <Switch>
           <Route exact path="/">
-            <Chat
-              sendMessage={sendMessage}
-              addChannel={addChannel}
-              removeChannel={removeChannel}
-              renameChannel={renameChannel}
-            />
+            <Chat />
           </Route>
           <Route exact path="/login">
             <Login />
