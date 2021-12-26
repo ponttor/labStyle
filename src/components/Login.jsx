@@ -88,8 +88,8 @@ const Login = () => {
                         {formik.errors.password}
                       </div>
 
-                      <button type="submit" className="bg-primary d-block">
-                        Button
+                      <button type="submit" className=" btn btn-primary d-block">
+                        Log in
                       </button>
                     </form>
                     <div>
