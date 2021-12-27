@@ -12,5 +12,10 @@ export default {
     modalDeleteQuestion: 'Уверены?',
     modalDeleteTitle: 'Удалить канал',
     noMatch: 'Страница не найдена',
+    loginTitle: 'Войти',
+    loginName: 'Ваш ник',
+    loginPassword: 'Пароль',
+    loginNoaccount: 'нет аккаунта? ',
+    loginRegistration: 'Регистрация',
   },
 };

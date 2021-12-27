@@ -1,10 +1,10 @@
 import axios from "axios";
 import * as yup from "yup";
-import { createBrowserHistory } from "history";
+import i18next from "i18next";
 import { useHistory } from "react-router-dom";
 import { useFormik } from "formik";
-import React, { useContext, useState } from "react";
-import AuthContext from '../AuthContext';
+import React, { useContext } from "react";
+import AuthContext from "../AuthContext";
 
 const validationSchema = yup.object({
   username: yup
@@ -16,19 +16,13 @@ const validationSchema = yup.object({
 
 const Login = () => {
   const { isAuthenticated, login } = useContext(AuthContext);
-  console.log(isAuthenticated);
   const history = useHistory();
-  // setIsAuth(true);
-  // const history = createBrowserHistory();
+
   const onSubmit = async (values) => {
     try {
       const response = await axios.post("/api/v1/login", values);
       localStorage.setItem("token", response.data.token);
-      console.log(values.name);
       login(values.name);
-      // setIsAuthenticated(true);
-      // history.push("/");
-      // setIsAuth(true);
     } catch (err) {
       console.log("wtf");
       console.log(err.response.statusText);
@@ -44,60 +38,78 @@ const Login = () => {
     validationSchema,
   });
 
-  // const pageRender = () => {
-  //   if isAuth {? history.push("/") : }history.push("/login");
-  // };
-
   return (
     <>
-      {isAuthenticated && history.push('/')}
-      <div className="container mt-3 ">
-        <div className="row d-flex justify-content-center align-items-center">
-          <div className="col-md-5 ">
-            <div className="d-flex justify-content-center align-items-center">
-              <div className="container h-100 d-flex justify-content-center">
-                <div className="row d-flex justify-content-center">
-                  <div className="col">
-                    <form className="" onSubmit={formik.handleSubmit}>
-                      <label className="d-block" htmlFor="username">
-                        Name
-                      </label>
-                      <input
-                        className="d-block"
-                        type="text"
-                        id="username"
-                        name="username"
-                        onChange={formik.handleChange}
-                        onBlur={formik.handleBlur}
-                        value={formik.values.name}
-                      />
-                      <div className="text-danger">{formik.errors.name}</div>
-
-                      <label className="d-block" htmlFor="password">
-                        Password
-                      </label>
-                      <input
-                        className="d-block"
-                        type="password"
-                        id="password"
-                        name="password"
-                        onChange={formik.handleChange}
-                        value={formik.values.password}
-                      />
-                      <div className="text-danger fs-6">
-                        {formik.errors.password}
-                      </div>
-
-                      <button type="submit" className=" btn btn-primary d-block">
-                        Log in
-                      </button>
-                    </form>
-                    <div>
-                      <hr />
-                      Registration link
-                    </div>
-                  </div>
+      {isAuthenticated && history.push("/")}
+      <div className="container-fluid h-100">
+        <div className="h-100 d-flex justify-content-center align-items-center">
+          <div className="col-12 col-md-8 col-xxl-6">
+            <div className="card shadow-sm">
+              <div className="card-body row p-5">
+                <div className="d-flex align-items-center justify-content-center col-12 col-md-6 p-4">
+                  <img
+                    src="https://res.cloudinary.com/ponttor/image/upload/v1640614045/hexlet_pielxk.jpg"
+                    className="card-img-top flex-grow-1 rounded-circle p-5"
+                    alt="..."
+                  />
                 </div>
+                <form
+                  className="col-12 col-md-6 mt-3 mt-mb-0"
+                  onSubmit={formik.handleSubmit}
+                >
+                  <h1 className="text-center mb-4">
+                    {i18next.t("loginTitle")}
+                  </h1>
+                  <div className="form-floating mb-3 form-group">
+                    <input
+                      className="form-control"
+                      type="text"
+                      id="username"
+                      name="username"
+                      onChange={formik.handleChange}
+                      onBlur={formik.handleBlur}
+                      value={formik.values.name}
+                      placeholder={i18next.t("loginName")}
+                    />
+                    <label className="d-block" htmlFor="username">
+                      {i18next.t("loginName")}
+                    </label>
+                  </div>
+                  <div className="text-danger">{formik.errors.name}</div>
+
+                  <div className="form-floating mb-4 form-group">
+                    <input
+                      className="form-control"
+                      type="password"
+                      id="password"
+                      name="password"
+                      onChange={formik.handleChange}
+                      value={formik.values.password}
+                      placeholder={i18next.t("loginPassword")}
+                    />
+                    <label className="d-block" htmlFor="password">
+                      {i18next.t("loginPassword")}
+                    </label>
+                  </div>
+                  <div className="text-danger fs-6">
+                    {formik.errors.password}
+                  </div>
+
+                  <button
+                    type="submit"
+                    className="w-100 mb-3 btn btn-outline-primary"
+                  >
+                    {i18next.t("loginTitle")}
+                  </button>
+                </form>
+              </div>
+              <div className="card-footer p-4">
+                <small>
+                  <div className="text-center">
+                    <span>{i18next.t("loginNoaccount")}</span>
+                    <a href="http://labstyle.online/">{i18next.t("loginRegistration")}</a>
+                  </div>
+                </small>
               </div>
             </div>
           </div>
