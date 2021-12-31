@@ -1,7 +1,8 @@
 import React, { useEffect, useContext } from "react";
-import AuthContext from '../AuthContext';
+import AuthContext from "../AuthContext";
 import { Switch, Route, Router, Redirect, useHistory } from "react-router-dom";
 import { Image } from "cloudinary-react";
+import LessonsMap from "./LessonsMap.jsx";
 
 const Chat = () => {
   const { isAuthenticated, setIsAuthenticated } = useContext(AuthContext);
@@ -20,10 +21,9 @@ const Chat = () => {
             width="300"
             crop="scale"
           />
-          <p className="card-text text-center ">
-            Она доступна только для авторизованных участников. Здесь может быть
-            карта курса, ссылки на уроки и любой функционал.
-          </p>
+          <LessonsMap />
+          {/* <p className="card-text text-center ">
+          </p> */}
         </div>
       </div>
     </>
