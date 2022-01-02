@@ -34,7 +34,7 @@ export default function LessonMap() {
           <ImgButton number={11} url="/lesson11" />
           <ImgButton number={12} url="/lesson12" />
         </div>
-        <div className="d-flex pt-3 flex-wrap justify-content-around">
+        <div className="pb-4 d-flex pt-3 flex-wrap justify-content-around">
           <ImgButton number={13} url="/lesson13" />
           <ImgButton number={14} url="/lesson14" />
         </div>

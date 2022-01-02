@@ -12,15 +12,15 @@ const Chat = () => {
       {!isAuthenticated && history.push("/login")}
       <div className="d-flex justify-content-around align-items-center">
         <div className="card" style={{ width: "18rem" }}>
-          <div className="card-body">
+          {/* <div className="card-body">
             <h5 className="card-title text-center">Секретная страничка</h5>
-          </div>
-          <Image
+          </div> */}
+          {/* <Image
             cloudName="ponttor"
             publicId="36444556_ts17zx"
             width="300"
             crop="scale"
-          />
+          /> */}
           <LessonsMap />
           {/* <p className="card-text text-center ">
           </p> */}
