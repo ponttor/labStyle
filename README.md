@@ -4,7 +4,7 @@
 
 This is an application for online illustration course. 
 
-The app is available here: https://calm-basin-99899.herokuapp.com
+The app is available here: https://lab-style.herokuapp.com/
 
 Login: admin
 
