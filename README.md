@@ -2,9 +2,13 @@
 
 [![Github Actions Status](https://github.com/hexlet-components/projects-frontend-l4-server/workflows/Node%20CI/badge.svg)](https://github.com/hexlet-components/projects-frontend-l4-server/actions)
 
-## Requirements
+This is an application for online illustration course. 
 
-* [Heroku](https://calm-basin-99899.herokuapp.com/)
+The app is available here: https://calm-basin-99899.herokuapp.com
+
+Login: admin
+
+Password: admin
 
 ## Install
 
