@@ -7,7 +7,7 @@ import {
 } from 'react-router-dom';
 import AuthProvider from './AuthProvider.jsx';
 // import { ToastContainer, toast } from 'react-toastify';
-import Login from './Login.jsx';
+import Login from './Login/Login.jsx';
 import Page404 from './NotFoundPage.jsx';
 import Chat from './Chat.jsx';
 import Nav from './Nav.jsx';
