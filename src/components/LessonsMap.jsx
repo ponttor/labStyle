@@ -1,15 +1,13 @@
-import React from "react";
+import React from 'react';
 import ImgButton from './ImgButton.jsx';
 
 export default function LessonMap() {
   return (
     <div>
-      <div className="card" style={{ width: "18rem" }}>
+      <div className="card" style={{ width: '18rem' }}>
         <div className="card-body">
           <h5 className="card-title text-center">Карта Путешествия</h5>
         </div>
-        {/* <iframe src="https://giphy.com/embed/2kMQxlmpgVGlxSvT23" width="180" height="108" frameBorder="0" className="align-center" allowFullScreen></iframe>  */}
-        {/* <Image cloudName="ponttor" publicId="36444556_ts17zx" width="300" crop="scale" /> */}
         <div className="d-flex pt-3 flex-wrap justify-content-around">
           <ImgButton number={1} url="/lesson1" />
           <ImgButton number={2} url="/lesson2" />

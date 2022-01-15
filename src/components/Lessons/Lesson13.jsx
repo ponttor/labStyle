@@ -1,5 +1,5 @@
-import React, { useContext } from "react";
-import { useHistory } from "react-router-dom";
+import React, { useContext } from 'react';
+import { useHistory } from 'react-router-dom';
 import AuthContext from '../../AuthContext';
 
 export default function Lesson13() {
@@ -7,7 +7,7 @@ export default function Lesson13() {
   const history = useHistory();
   return (
     <>
-      {!isAuthenticated && history.push("/login")}
+      {!isAuthenticated && history.push('/login')}
       <div>Lesson13</div>
     </>
   );

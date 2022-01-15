@@ -1,17 +1,13 @@
-import React, { useState } from "react";
-import _ from "lodash";
-import AuthContext from "../AuthContext";
-
-// login
-// незалогинен - нул, иначе {}
-// логин положить в локал сторэдж узера, ник, id, token и сделать setUser
-// логаут user - null, локал стор удалить.
+import React, { useState } from 'react';
+import _ from 'lodash';
+import AuthContext from '../AuthContext';
 
 const AuthProvider = ({ children }) => {
-  const firstToken = localStorage.getItem("token");
-  // firstToken ? setIsAuthenticated(true) : setIsAuthenticated(false)
+  const firstToken = localStorage.getItem('token');
   const [isAuthenticated, setIsAuthenticated] = useState(!!firstToken);
   const [token, setToken] = useState(firstToken);
+  // const { userName } = localStorage.getItem('userName');
+  // console.log(userName);
   // if (token) {
   //   setIsAuthenticated(true);
   // }
@@ -20,19 +16,22 @@ const AuthProvider = ({ children }) => {
 
   function login(name) {
     setIsAuthenticated(true);
-    setToken(localStorage.getItem("token"))
-    localStorage.setItem("user", { name, id: getNextId(), token });
+    console.log(name);
+    // localStorage.setItem('user', { name, id: getNextId(), token });
+    // localStorage.setItem('user', name);
+    // const user = localStorage.getItem('user');
+    // console.log(user);
   }
 
   function logout() {
     setIsAuthenticated(false);
-    localStorage.setItem("user", {});
-    localStorage.setItem("token", null);
+    localStorage.removeItem('user');
+    localStorage.removeItem('token');
   }
 
   function signup(name) {
     setIsAuthenticated(true);
-    localStorage.setItem("user", { name, id: getNextId(), token });
+    localStorage.setItem('user', { name, id: getNextId(), token });
   }
   return (
     <AuthContext.Provider

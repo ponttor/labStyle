@@ -1,17 +1,17 @@
-import axios from "axios";
-import * as yup from "yup";
-import i18next from "i18next";
-import { useHistory } from "react-router-dom";
-import { useFormik } from "formik";
-import React, { useContext } from "react";
-import AuthContext from "../AuthContext";
+import axios from 'axios';
+import * as yup from 'yup';
+import i18next from 'i18next';
+import { useHistory } from 'react-router-dom';
+import { useFormik } from 'formik';
+import React, { useContext } from 'react';
+import AuthContext from '../AuthContext';
 
 const validationSchema = yup.object({
   username: yup
     .string()
-    .min(3, "Please enter your real name")
-    .required("Full name is required"),
-  password: yup.string().required("Password is required"),
+    .min(3, 'Please enter your real name')
+    .required('Full name is required'),
+  password: yup.string().required('Password is required'),
 });
 
 const Login = () => {
@@ -20,19 +20,19 @@ const Login = () => {
 
   const onSubmit = async (values) => {
     try {
-      const response = await axios.post("/api/v1/login", values);
-      localStorage.setItem("token", response.data.token);
+      const response = await axios.post('/api/v1/login', values);
+      localStorage.setItem('token', response.data.token);
       login(values.name);
     } catch (err) {
-      console.log("wtf");
+      console.log('wtf');
       console.log(err.response.statusText);
     }
   };
 
   const formik = useFormik({
     initialValues: {
-      username: "",
-      password: "",
+      username: '',
+      password: '',
     },
     onSubmit,
     validationSchema,
@@ -40,7 +40,7 @@ const Login = () => {
 
   return (
     <>
-      {isAuthenticated && history.push("/")}
+      {isAuthenticated && history.push('/')}
       <div className="container-fluid h-100">
         <div className="h-100 d-flex justify-content-center align-items-center">
           <div className="col-12 col-md-8 col-xxl-6">
@@ -58,7 +58,7 @@ const Login = () => {
                   onSubmit={formik.handleSubmit}
                 >
                   <h1 className="text-center mb-4">
-                    {i18next.t("loginTitle")}
+                    {i18next.t('loginTitle')}
                   </h1>
                   <div className="form-floating mb-3 form-group">
                     <input
@@ -69,10 +69,10 @@ const Login = () => {
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
                       value={formik.values.name}
-                      placeholder={i18next.t("loginName")}
+                      placeholder={i18next.t('loginName')}
                     />
                     <label className="d-block" htmlFor="username">
-                      {i18next.t("loginName")}
+                      {i18next.t('loginName')}
                     </label>
                   </div>
                   <div className="text-danger">{formik.errors.name}</div>
@@ -85,10 +85,10 @@ const Login = () => {
                       name="password"
                       onChange={formik.handleChange}
                       value={formik.values.password}
-                      placeholder={i18next.t("loginPassword")}
+                      placeholder={i18next.t('loginPassword')}
                     />
                     <label className="d-block" htmlFor="password">
-                      {i18next.t("loginPassword")}
+                      {i18next.t('loginPassword')}
                     </label>
                   </div>
                   <div className="text-danger fs-6">
@@ -99,16 +99,16 @@ const Login = () => {
                     type="submit"
                     className="w-100 mb-3 btn btn-outline-primary"
                   >
-                    {i18next.t("loginTitle")}
+                    {i18next.t('loginTitle')}
                   </button>
                 </form>
               </div>
               <div className="card-footer p-4">
                 <small>
                   <div className="text-center">
-                    <span>{i18next.t("loginNoaccount")}</span>
+                    <span>{i18next.t('loginNoaccount')}</span>
                     <a href="http://labstyle.online/">
-                      {i18next.t("loginRegistration")}
+                      {i18next.t('loginRegistration')}
                     </a>
                   </div>
                 </small>

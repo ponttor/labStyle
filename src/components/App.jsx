@@ -1,61 +1,49 @@
-import React from "react";
-import { createBrowserHistory } from "history";
+import React from 'react';
 import {
   Switch,
   Route,
-  Router,
-  Redirect,
   useHistory,
   BrowserRouter,
-} from "react-router-dom";
+} from 'react-router-dom';
+import AuthProvider from './AuthProvider.jsx';
 // import { ToastContainer, toast } from 'react-toastify';
-import { useDispatch } from "react-redux";
-import Login from "./Login.jsx";
-import Page404 from "./NotFoundPage.jsx";
-import Chat from "./Chat.jsx";
-import Nav from "./Nav.jsx";
-import Signup from "./Signup.jsx";
-import Lesson1 from "./Lessons/Lesson1.jsx";
-import Lesson2 from "./Lessons/Lesson2.jsx";
-import Lesson3 from "./Lessons/Lesson3.jsx";
-import Lesson4 from "./Lessons/Lesson4.jsx";
-import Lesson5 from "./Lessons/Lesson5.jsx";
-import Lesson6 from "./Lessons/Lesson6.jsx";
-import Lesson7 from "./Lessons/Lesson7.jsx";
-import Lesson8 from "./Lessons/Lesson8.jsx";
-import Lesson9 from "./Lessons/Lesson9.jsx";
-import Lesson10 from "./Lessons/Lesson10.jsx";
-import Lesson11 from "./Lessons/Lesson11.jsx";
-import Lesson12 from "./Lessons/Lesson12.jsx";
-import Lesson13 from "./Lessons/Lesson13.jsx";
-import Lesson14 from "./Lessons/Lesson14.jsx";
-import AuthProvider from "./AuthProvider.jsx";
-import {
-  addNewChannel,
-  deleteChannel,
-  updateChannel,
-} from "../slices/channelsSlice.jsx";
-import { updateMessages } from "../slices/messagesSlice.jsx";
+import Login from './Login.jsx';
+import Page404 from './NotFoundPage.jsx';
+import Chat from './Chat.jsx';
+import Nav from './Nav.jsx';
+import Lesson1 from './Lessons/Lesson1.jsx';
+import Lesson2 from './Lessons/Lesson2.jsx';
+import Lesson3 from './Lessons/Lesson3.jsx';
+import Lesson4 from './Lessons/Lesson4.jsx';
+import Lesson5 from './Lessons/Lesson5.jsx';
+import Lesson6 from './Lessons/Lesson6.jsx';
+import Lesson7 from './Lessons/Lesson7.jsx';
+import Lesson8 from './Lessons/Lesson8.jsx';
+import Lesson9 from './Lessons/Lesson9.jsx';
+import Lesson10 from './Lessons/Lesson10.jsx';
+import Lesson11 from './Lessons/Lesson11.jsx';
+import Lesson12 from './Lessons/Lesson12.jsx';
+import Lesson13 from './Lessons/Lesson13.jsx';
+import Lesson14 from './Lessons/Lesson14.jsx';
 
 const App = ({ socket }) => {
-  const dispatch = useDispatch();
   const history = useHistory();
   console.log(history);
   // const history = createBrowserHistory();
 
   window.socket = socket;
-  socket.on("newMessage", (message) => {
-    dispatch(updateMessages(message));
-  });
-  socket.on("newChannel", (data) => {
-    dispatch(addNewChannel(data));
-  });
-  socket.on("removeChannel", (data) => {
-    dispatch(deleteChannel(data.id));
-  });
-  socket.on("renameChannel", ({ id, name }) => {
-    dispatch(updateChannel({ id, name }));
-  });
+  // socket.on('newMessage', (message) => {
+  //   dispatch(updateMessages(message));
+  // });
+  // socket.on('newChannel', (data) => {
+  //   dispatch(addNewChannel(data));
+  // });
+  // socket.on('removeChannel', (data) => {
+  //   dispatch(deleteChannel(data.id));
+  // });
+  // socket.on('renameChannel', ({ id, name }) => {
+  //   dispatch(updateChannel({ id, name }));
+  // });
 
   // const notify = () => toast('Wow so easy!');
 
@@ -67,7 +55,7 @@ const App = ({ socket }) => {
   // };
 
   // Auth: login, logout, user
-  //AuthProvider props.
+  // AuthProvider props.
   return (
     <>
       <AuthProvider>
@@ -81,9 +69,9 @@ const App = ({ socket }) => {
             <Route exact path="/login">
               <Login />
             </Route>
-            <Route exact path="/signup">
+            {/* <Route exact path="/signup">
               <Signup />
-            </Route>
+            </Route> */}
 
             <Route exact path="/lesson1">
               <Lesson1 />
