@@ -3,7 +3,7 @@ import {
   useHistory,
 } from 'react-router-dom';
 import AuthContext from '../AuthContext';
-import LessonsBox from './LessonsBox.jsx';
+import CubeLessonsBox from './CubeLessonsBox.jsx';
 import LessonsBoxMobile from './LessonsBoxMobile.jsx';
 
 const Home = () => {
@@ -19,11 +19,12 @@ const Home = () => {
         </div>
 
         <div className="col-12 d-none d-md-block d-lg-none p-0">
-          <LessonsBox />
+          {/* <LessonsBox /> */}
+          <CubeLessonsBox />
         </div>
 
         <div className="col-12 d-none d-lg-block p-0">
-          <LessonsBox />
+          <CubeLessonsBox />
         </div>
       </div>
       {/* <ListLessonsMap /> */}

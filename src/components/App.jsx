@@ -65,7 +65,7 @@ const App = ({ socket }) => {
           {/* <Router history={history}> */}
           <Switch>
             <Route exact path="/">
-              <Nav />
+              {/* <Nav /> */}
               <Home />
             </Route>
             <Route exact path="/login">
