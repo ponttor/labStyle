@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import i18next from 'i18next';
 import { useDispatch, useSelector } from 'react-redux';
-import { updateModalStatus, updateExtra } from '../../slices/modalSlice.jsx';
+import { updateModalStatus, updateExtra } from '../../../slices/modalSlice.jsx';
 
 export default function ModalRename({ renderChannels }) {
   const dispatch = useDispatch();

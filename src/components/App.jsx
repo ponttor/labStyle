@@ -9,9 +9,11 @@ import AuthProvider from './AuthProvider.jsx';
 // import { ToastContainer, toast } from 'react-toastify';
 import Login from './Login/Login.jsx';
 import Page404 from './NotFoundPage.jsx';
-import Chat from './Chat.jsx';
+import Home from './Home.jsx';
 import Nav from './Nav.jsx';
 import Lesson1 from './Lessons/Lesson1.jsx';
+import Video1 from './Video/Video1.jsx';
+import Practice1 from './Practice/Practice1.jsx';
 import Lesson2 from './Lessons/Lesson2.jsx';
 import Lesson3 from './Lessons/Lesson3.jsx';
 import Lesson4 from './Lessons/Lesson4.jsx';
@@ -64,7 +66,7 @@ const App = ({ socket }) => {
           <Switch>
             <Route exact path="/">
               <Nav />
-              <Chat />
+              <Home />
             </Route>
             <Route exact path="/login">
               <Login />
@@ -75,6 +77,12 @@ const App = ({ socket }) => {
 
             <Route exact path="/lesson1">
               <Lesson1 />
+            </Route>
+            <Route exact path="/video1">
+              <Video1 />
+            </Route>
+            <Route exact path="/practice1">
+              <Practice1 />
             </Route>
             <Route exact path="/lesson2">
               <Lesson2 />

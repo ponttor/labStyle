@@ -3,16 +3,29 @@ import {
   useHistory,
 } from 'react-router-dom';
 import AuthContext from '../AuthContext';
-import ListLessonsMap from './ListLessonsMap.jsx';
-import Trieda from './Trieda.jsx';
+import LessonsBox from './LessonsBox.jsx';
+import LessonsBoxMobile from './LessonsBoxMobile.jsx';
 
-const Chat = () => {
+const Home = () => {
   const { isAuthenticated } = useContext(AuthContext);
   const history = useHistory();
   return (
     <>
       {!isAuthenticated && history.push('/login')}
-      <Trieda />
+
+      <div className="overflow-hidden">
+        <div className="col-12 d-block d-md-none">
+          <LessonsBoxMobile />
+        </div>
+
+        <div className="col-12 d-none d-md-block d-lg-none p-0">
+          <LessonsBox />
+        </div>
+
+        <div className="col-12 d-none d-lg-block p-0">
+          <LessonsBox />
+        </div>
+      </div>
       {/* <ListLessonsMap /> */}
       {/* <div className="d-flex justify-content-around align-items-center"> */}
       {/* <div className="card" style={{ width: "18rem" }}> */}
@@ -23,4 +36,4 @@ const Chat = () => {
     </>
   );
 };
-export default Chat;
+export default Home;
