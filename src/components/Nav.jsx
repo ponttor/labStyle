@@ -9,7 +9,7 @@ export default function Nav() {
     <nav className="shadow-sm navbar navbar-expand-lg navbar-light bg-white">
       <div className="container">
         <div className="navbar-brand">{i18next.t('title')}</div>
-        {isAuthenticated && <button onClick={logout} className="btn btn-primary" type="button">{i18next.t('logOutButton')}</button>}
+        {isAuthenticated && <button onClick={console.log('account')} className="btn btn-primary" type="button">Account</button>}
       </div>
     </nav>
   );

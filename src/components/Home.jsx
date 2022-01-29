@@ -9,6 +9,7 @@ import Treasures from './Treasures.jsx';
 import Bibliothek from './Bibliothek.jsx';
 import BigButton from './BigButton.jsx';
 import Telegram from './Telegram.jsx';
+import Nav from './Nav.jsx';
 
 const Home = () => {
   const { isAuthenticated } = useContext(AuthContext);
@@ -29,6 +30,7 @@ const Home = () => {
           <CubeLessonsBox />
         </div>
       </div> */}
+      <Nav />
       <CubeLessonsBox />
       <Treasures />
       <Bibliothek />
