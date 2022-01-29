@@ -3,7 +3,7 @@ import React from 'react';
 
 export default function Cube({ url }) {
   return (
-    <div>
+    <div className="px-2">
       <a href="/lesson1">
         <img
           src={url}
